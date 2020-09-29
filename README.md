@@ -11,9 +11,9 @@ As a PowerShell script is in general, a procedural script because it's usually a
 Transform a procedural script into an OOP create a benefit : documentation into the code.
 
 ## USING CLASSICAL DESIGN PATTERNS
-
-## USING 
-
+...
+## USING MODERN DESIGN PATTERNS
+...
 # GETTING STARTED
 1- In Visual Studio Code IDE, install the GitHub extension </br>
 2- In Visual Studio Code IDE, install the PowerShell extension </br>
