@@ -8,7 +8,7 @@ The GoF has created an opportunity to use the known design patterns in a PowerSh
 
 As a PowerShell script is in general, a procedural script because it's usually a simple and straight-forward action.
 
-Transform a procedural script into an OOP create a benefit : documentation into the code.
+Transform a procedural script into an OOP create a benefit : <b>documentation into the code<b>.
 
 ## USING CLASSICAL DESIGN PATTERNS
 ...
