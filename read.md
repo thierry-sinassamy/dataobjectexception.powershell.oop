@@ -11,7 +11,7 @@ As a PowerShell script is in general, a procedural script because it's usually a
 Transform a procedural script into an OOP create a benefit : documentation into the code.
 
 # GETTING STARTED
-1- In Visual Studio Code IDE, install the GitHub extension
-2- In Visual Studio Code IDE, install the PowerShell extension
-3- In Visual Studio Code IDE, install the Visual Studio IntelliCode (nice to have !)
-4- Exexute the Module PMS1 - ControlJobs.psm1 and pass the mandatory parameters 
+1- In Visual Studio Code IDE, install the GitHub extension </br>
+2- In Visual Studio Code IDE, install the PowerShell extension </br>
+3- In Visual Studio Code IDE, install the Visual Studio IntelliCode (nice to have !) </br>
+4- Exexute the Module PMS1 - ControlJobs.psm1 and pass the mandatory parameters </br>
