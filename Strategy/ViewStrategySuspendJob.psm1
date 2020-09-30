@@ -1,14 +1,14 @@
-using module ./Factory/ViewGeneration.psm1
 using module ./Utility/EnumJobStateInfo.psm1
+using module ./Factory/ViewGeneration.psm1
 
-class ViewStrategyDebugJob:ViewGeneration{
+class ViewStrategySuspendJob:ViewGeneration{
 
-    ViewStrategyDebugJob(){}
-
+    ViewStrategySuspendJob(){}
+    
     #Override ExecuteJob
-    [System.Collections.Specialized.OrderedDictionary]ExecuteJob([string]$JobName, [string]$Id){
-        
-        Write-Host "In the Methods [ExecuteJob] of the class [ViewStrategyGetJob] for the action [GetJob]."
+    [System.Collections.Specialized.OrderedDictionary]ExecuteJob([string]$JobName, [string]$Id)
+    {    
+        Write-Host "In the Methods [ExecuteJob] of the class [ViewStrategySuspendJob] for the action [SuspendJob]."
         $JobFromGetJob = Get-Job
         $HashOfJobs = [ordered]@{}
 
@@ -18,8 +18,8 @@ class ViewStrategyDebugJob:ViewGeneration{
             {
                 if(($JobFromGetJob[$i].State.ToLower() -eq ([EnumJobStateInfo]::Running -as [string]).ToLower()))
                 {
-                    Debug-Job -Id $JobFromGetJob[$i].Id
-                    Write-Host "[Get-Job] : " $JobFromGetJob[$i].Id.ToLower() + " - " + $JobFromGetJob[$i].Name.ToLower() + " - " + $JobFromGetJob[$i].Command.ToLower()
+                    Suspend-Job -Name $JobFromGetJob[$i]
+                    Write-Host "[Suspend-Job] : " $JobFromGetJob[$i].Id.ToLower() + " - " + $JobFromGetJob[$i].Name.ToLower() + " - " + $JobFromGetJob[$i].Command.ToLower()
                 }
             }
         }

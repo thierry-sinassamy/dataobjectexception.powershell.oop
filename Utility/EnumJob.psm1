@@ -8,4 +8,6 @@ enum EnumJobToExecute
     FailedJob
     ResumeJob
     DebugJob
+    WaitJob
+    SuspendJob
 }
