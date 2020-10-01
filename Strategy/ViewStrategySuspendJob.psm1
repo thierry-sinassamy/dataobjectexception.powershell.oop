@@ -6,9 +6,9 @@ class ViewStrategySuspendJob:ViewGeneration{
     ViewStrategySuspendJob(){}
     
     #Override ExecuteJob
-    [System.Collections.Specialized.OrderedDictionary]ExecuteJob([string]$JobName, [string]$Id)
+    [System.Collections.Specialized.OrderedDictionary]ExecuteJob([string]$ActionName, [string]$JobName, [string]$Id)
     {    
-        Write-Host "In the Methods [ExecuteJob] of the class [ViewStrategySuspendJob] for the action [SuspendJob]."
+        Write-Host "In the Methods [ExecuteJob] of the class [ViewStrategySuspendJob] for the action : " $ActionName
         $JobFromGetJob = Get-Job
         $HashOfJobs = [ordered]@{}
 
@@ -19,7 +19,7 @@ class ViewStrategySuspendJob:ViewGeneration{
                 if(($JobFromGetJob[$i].State.ToLower() -eq ([EnumJobStateInfo]::Running -as [string]).ToLower()))
                 {
                     Suspend-Job -Name $JobFromGetJob[$i]
-                    Write-Host "[Suspend-Job] : " $JobFromGetJob[$i].Id.ToLower() + " - " + $JobFromGetJob[$i].Name.ToLower() + " - " + $JobFromGetJob[$i].Command.ToLower()
+                    Write-Host $ActionName " As Action : " $JobFromGetJob[$i].Id.ToLower() + " - " + $JobFromGetJob[$i].Name.ToLower() + " - " + $JobFromGetJob[$i].Command.ToLower()
                 }
             }
         }

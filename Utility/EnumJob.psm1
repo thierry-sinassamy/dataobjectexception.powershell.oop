@@ -1,7 +1,7 @@
 enum EnumJobToExecute
 {
     GetJob
-    ReceiveJob
+    ReceivedJob
     RemoveJob
     StopJob
     StartJob

@@ -6,9 +6,9 @@ class ViewStrategyDebugJob:ViewGeneration{
     ViewStrategyDebugJob(){}
 
     #Override ExecuteJob
-    [System.Collections.Specialized.OrderedDictionary]ExecuteJob([string]$JobName, [string]$Id){
+    [System.Collections.Specialized.OrderedDictionary]ExecuteJob([string]$ActionName, [string]$JobName, [string]$Id){
         
-        Write-Host "In the Methods [ExecuteJob] of the class [ViewStrategyGetJob] for the action [GetJob]."
+        Write-Host "In the Methods [ExecuteJob] of the class [ViewStrategyGetJob] for the action  : "  $ActionName
         $JobFromGetJob = Get-Job
         $HashOfJobs = [ordered]@{}
 
@@ -19,7 +19,7 @@ class ViewStrategyDebugJob:ViewGeneration{
                 if(($JobFromGetJob[$i].State.ToLower() -eq ([EnumJobStateInfo]::Running -as [string]).ToLower()))
                 {
                     Debug-Job -Id $JobFromGetJob[$i].Id
-                    Write-Host "[Get-Job] : " $JobFromGetJob[$i].Id.ToLower() + " - " + $JobFromGetJob[$i].Name.ToLower() + " - " + $JobFromGetJob[$i].Command.ToLower()
+                    Write-Host $ActionName " As Action : " $JobFromGetJob[$i].Id.ToLower() + " - " + $JobFromGetJob[$i].Name.ToLower() + " - " + $JobFromGetJob[$i].Command.ToLower()
                 }
             }
         }
