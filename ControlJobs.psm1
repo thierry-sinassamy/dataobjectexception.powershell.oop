@@ -27,7 +27,6 @@ class ControlJobs{
             if($null -eq $Hashtable){
                 $MessageToCaller = ([EnumJobStatusAfterExecution]::ExecutionFailedStatus -as [string]).ToLower()
             }
-
             Write-Host "Method " -f $MyInvocation.MyCommand " of the class [ControlJobs] is over  : " ([EnumJobStatusAfterExecution]::ExecutionCompletedStatus -as [string]).ToLower()
         }
         catch {
