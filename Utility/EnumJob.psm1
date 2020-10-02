@@ -5,6 +5,7 @@ enum EnumJobToExecute
     RemoveJob
     StopJob
     StartJob
+    StartJobByScriptBlock
     FailedJob
     ResumeJob
     DebugJob

@@ -10,6 +10,7 @@ using module ./Strategy/ViewStrategyStartJob.psm1
 using module ./Strategy/ViewStrategyStopJob.psm1
 using module ./Strategy/ViewStrategySuspendJob.psm1
 using module ./Strategy/ViewStrategyWaitJob.psm1
+using module ./Strategy/ViewStrategyStartJobByScriptBlock.psm1
 
 
 class ViewGenerationFactory{
@@ -27,6 +28,7 @@ class ViewGenerationFactory{
             ([EnumJobToExecute]::RemoveJob -as [string]).ToLower() { $Strategy = [ViewStrategyRemoveJob]::new() }
             ([EnumJobToExecute]::ResumeJob -as [string]).ToLower() { $Strategy = [ViewStrategyResumeJob]::new() }
             ([EnumJobToExecute]::StartJob -as [string]).ToLower() { $Strategy = [ViewStrategyStartJob]::new() }
+            ([EnumJobToExecute]::StartJobByScriptBlock -as [string]).ToLower() { $Strategy = [ViewStrategyStartJobByScriptBlock]::new() }
             ([EnumJobToExecute]::StopJob -as [string]).ToLower() { $Strategy = [ViewStrategyStopJob]::new() }
             ([EnumJobToExecute]::SuspendJob -as [string]).ToLower() { $Strategy = [ViewStrategySuspendJob]::new() }
             ([EnumJobToExecute]::WaitJob -as [string]).ToLower() { $Strategy = [ViewStrategyWaitJob]::new() }

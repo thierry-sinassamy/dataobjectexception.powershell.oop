@@ -6,6 +6,7 @@ using module ./Rules/ReceivedJobRule.psm1
 using module ./Rules/RemoveJobRule.psm1
 using module ./Rules/ResumeJobRule.psm1
 using module ./Rules/StartJobRule.psm1
+using module ./Rules/StartJobByScriptBlockRule.psm1
 using module ./Rules/StopJobRule.psm1 
 using module ./Rules/SuspendJobRule.psm1
 using module ./Rules/WaitJobRule.psm1
@@ -26,6 +27,7 @@ class DispatcherJob{
     [StopJobRule]$StopJobValidation
     [SuspendJobRule]$SuspendJobValidation
     [WaitJobRule]$WaitJobValidation
+    [StartJobByScriptBlockRule]$StartJobByScriptBlockValidation
 
     #Constructor
     DispatcherJob()
@@ -37,10 +39,11 @@ class DispatcherJob{
         $this.RemoveJobValidation = [RemoveJobRule]::new()
         $this.ResumeJobValidation = [ResumeJobRule]::new()
         $this.StartJobValidation = [StartJobRule]::new()
+        $this.StartJobByScriptBlockValidation = [StartJobByScriptBlockRule]::new()
         $this.StopJobValidation = [StopJobRule]::new()
         $this.SuspendJobValidation = [SuspendJobRule]::new()
         $this.WaitJobValidation = [WaitJobRule]::new()
-
+        
         $this.ExecutionRules.Add($this.DebugJobValidation)
         $this.ExecutionRules.Add($this.FailedJobValidation)
         $this.ExecutionRules.Add($this.GetJobValidation)
@@ -48,9 +51,10 @@ class DispatcherJob{
         $this.ExecutionRules.Add($this.RemoveJobValidation)
         $this.ExecutionRules.Add($this.ResumeJobValidation)
         $this.ExecutionRules.Add($this.StartJobValidation)
+        $this.ExecutionRules.Add($this.StartJobByScriptBlockValidation)
         $this.ExecutionRules.Add($this.StopJobValidation)
         $this.ExecutionRules.Add($this.SuspendJobValidation)
-        $this.ExecutionRules.Add($this.WaitJobRule)
+        $this.ExecutionRules.Add($this.WaitJobRule)        
     }
 
     #DispatchJob

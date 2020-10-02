@@ -24,6 +24,7 @@ class FrontControllerJob{
             ([EnumJobToExecute]::RemoveJob -as [string]).ToLower() -eq $JobName.ToLower() -Or
             ([EnumJobToExecute]::ResumeJob -as [string]).ToLower() -eq $JobName.ToLower() -Or
             ([EnumJobToExecute]::StartJob -as [string]).ToLower() -eq $JobName.ToLower() -Or
+            ([EnumJobToExecute]::StartJobByScriptBlock -as [string]).ToLower() -eq $JobName.ToLower() -Or
             ([EnumJobToExecute]::StopJob -as [string]).ToLower() -eq $JobName.ToLower() -Or
             ([EnumJobToExecute]::SuspendJob -as [string]).ToLower() -eq $JobName.ToLower() -Or
             ([EnumJobToExecute]::WaitJob -as [string]).ToLower() -eq $JobName.ToLower())

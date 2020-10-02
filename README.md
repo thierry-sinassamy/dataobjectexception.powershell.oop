@@ -15,3 +15,6 @@ Transform a procedural script into an OOP create a benefit : <b>documentation in
 2- In Visual Studio Code IDE, install the PowerShell extension </br>
 3- In Visual Studio Code IDE, install the Visual Studio IntelliCode (nice to have !) </br>
 4- Exexute the Module PMS1 - ControlJobs.psm1 and pass the mandatory parameters </br>
+
+# LIMITS (INCONVENIENTS)
+1- Instanciation of all the rules while all the rules are not used during the execution.
